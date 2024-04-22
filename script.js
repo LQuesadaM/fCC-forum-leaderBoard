@@ -52,9 +52,10 @@ const forumCategory = (id) => {
   }
   const url = `${forumCategoryUrl}${selectedCategory.className}/${id}`;
   const linkText = selectedCategory.category;
-  
+
   // These class names will be used to apply styles for the anchor element
-  const linkClass = `category ${selectedCategory.className}`
+  const linkClass = `category ${selectedCategory.className}`;
+  return `<a href="${url}" class="${linkClass}" target="_blank">${linkText}</a>`;
 };
 
 const timeAgo = (time) => {

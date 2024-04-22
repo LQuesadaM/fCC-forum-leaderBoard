@@ -119,6 +119,7 @@ const showLatestPosts = (data) => {
         <p class="post-title">
           ${title}
         </p>
+        ${forumCategory(category_id)}
       </td>
 
       <td></td>

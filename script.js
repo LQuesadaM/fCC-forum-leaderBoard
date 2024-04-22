@@ -50,6 +50,11 @@ const forumCategory = (id) => {
     selectedCategory.category = "General";
     selectedCategory.id = 1;
   }
+  const url = `${forumCategoryUrl}${selectedCategory.className}/${id}`;
+  const linkText = selectedCategory.category;
+  
+  // These class names will be used to apply styles for the anchor element
+  const linkClass = `category ${selectedCategory.className}`
 };
 
 const timeAgo = (time) => {

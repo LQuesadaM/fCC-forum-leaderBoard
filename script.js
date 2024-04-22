@@ -39,6 +39,19 @@ const allCategories = {
   },
 };
 
+const forumCategory = (id) => {
+  let selectedCategory = {};
+  if (allCategories.hasOwnProperty(id)) {
+    const { className, category } = allCategories[id];
+    selectedCategory.className = className;
+    selectedCategory.category = category;
+  } else {
+    selectedCategory.className = "general";
+    selectedCategory.category = "General";
+    selectedCategory.id = 1;
+  }
+};
+
 const timeAgo = (time) => {
   const currentTime = new Date();
   const lastPost = new Date(time);
@@ -71,7 +84,7 @@ const fetchData = async () => {
     const res = await fetch(forumLatest);
     const data = await res.json();
     showLatestPosts(data);
-    //console.log(data.topic_list.topics);
+    //console.log(data);
   } catch (err) {
     console.log(err);
   }
